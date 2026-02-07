@@ -11,7 +11,8 @@ body {
     grid-template-rows: repeat(3,1fr);
     width: 450px;
     height: 450px;
-    margin: 100px auto;
+    margin: 50px auto;
+    margin-left: 360px;
     
 }
 .field {
@@ -19,15 +20,175 @@ body {
     height: 150px;
     background-color: rgb(17, 11, 11);
 }
+.field:hover {
+    box-shadow: 0 0 15px 5px rgb(132, 131, 131, 0.7) inset;
+}
 .x {
     background-image: url(images/X_150x150.png) ;
     width: 150px;
     height: 150px;
     background-color: rgb(17, 11, 11);
 }
+.x:hover, .o:hover {
+    box-shadow: none;
+}
 .o {
     background-image: url(images/circle_150x150.png);
     width: 150px;
     height: 150px;
     background-color: rgb(17, 11, 11);
+}
+.overlay {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    inset: 0;
+}
+.overlay.hidden {
+    display: none;
+}
+.overlay-content {
+    background: #222;
+    color: white;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 300px;
+    max-width: 90%;
+    font-size: 20px;
+}
+.overlay-content h2 {
+    margin: 0 0 1rem;
+    color: #ffd700;
+}
+#play-again {
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#play-again:hover, #restart:hover {
+    background: #45a049;
+}
+
+.gameStart {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    inset: 0;
+}
+.gameStart.hidden {
+    display: none;
+}
+.gameStart-content {
+    background: #222;
+    color: white;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+    min-width: 600px;
+    min-height: 300px;
+    max-width: 90%;
+}
+.startForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+.form1, .form2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-style: italic;
+}
+input {
+    background-color: rgb(66, 66, 66);
+    color: white;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.gameStart-content h2 {
+    margin: 0 0 1rem;
+    color: #ffd700;
+}
+#startButton {
+    width: 200px;
+    height: 40px;
+    margin-top: 1.5rem;
+    padding: 0.8rem auto;
+    font-size: 1.1rem;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#startButton:hover {
+    background: #45a049;
+  
+}
+.scoreBoard {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 300px;
+    color: white;
+    inset: 70px auto auto 50px;
+    text-align: center;
+    column-gap: 5px;
+    row-gap: 50px;
+    font-size: 20px;
+    font-weight: 900;
+}
+.scoreBoard> p:first-child, .scoreBoard> p:nth-child(2) {
+    color: #45a049;
+}
+.scoreBoard> p:nth-child(2), .scoreBoard> p:nth-child(5) {
+    border-left: 1px solid white;
+}
+.scoreBoard> p:nth-child(3) {
+    grid-column: 1/3;
+    color: #ffd700;
+}
+.scoreBoard> div:last-child {
+    grid-column: 1/3;
+}
+#restart {
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

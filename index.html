@@ -19,6 +19,38 @@
         <button class="field" data-index-number = "8"></button>
         <button class="field" data-index-number = "9"></button>
     </div>
-    <p id="result"></p>
+    <div id="overlay-container" class="overlay hidden">
+        <div class="overlay-content">
+            <h2 id="win-title">Congratulations!</h2>
+            <p id="win-message">Player X wins!</p>
+            <button id="play-again">Play Again</button>
+        </div>
+    </div>
+    <div id="gameStart" class="gameStart">
+        <div class="gameStart-content">
+            <h2 id="hello-title">Welcom to Tic Tac Toe game !</h2>
+            <form action="#" class="startForm" id="startForm">
+                <div class="form-container">
+                    <div class="form1">
+                        <label for="playerOne">Player 1 Name:</label>
+                        <input type="text" id="playerOne" maxlength="10" required>
+                    </div>
+                    <div class="form2">
+                        <label for="playerTwo">Player 2 Name:</label>
+                        <input type="text" id="playerTwo" maxlength="10" required>
+                    </div>
+                </div>
+                <button type="submit" id="startButton">Start</button>
+            </form>
+        </div>
+    </div>
+    <div id="scoreBoard" class="scoreBoard">
+        <p id="name1">Player1</p>
+        <p id="name2">Player2</p>
+        <p>Score:</p>
+        <p id="score1">1</p>
+        <p id="score2">2</p>
+        <div class="btn-container"><button id="restart" class="restartButton">Restart</button></div>
+    </div>
 </body>
 </html>
